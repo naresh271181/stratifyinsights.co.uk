@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-String -Pattern \"favicon|logo|og-image|social\" -i)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\HP\\\\OneDrive\\\\1. Naresh Kumar\\\\New Begining\\\\Websites\\\\theCFOtalent.com\\\\cfotalent_site\" -Recurse | Where-Object { $_.Name -match \"favicon|logo|og-image|social|png|jpg|svg|ico|webp\" } | Select-Object FullName)",
+      "WebFetch(domain:medium.com)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(del \"C:\\\\Users\\\\HP\\\\OneDrive\\\\1. Naresh Kumar\\\\New Begining\\\\Websites\\\\theCFOtalent.com\\\\cfotalent_site\\\\blog.html\")",
+      "PowerShell(Remove-Item \"C:\\\\Users\\\\HP\\\\OneDrive\\\\1. Naresh Kumar\\\\New Begining\\\\Websites\\\\theCFOtalent.com\\\\cfotalent_site\\\\blog.html\" -Confirm:$false)",
+      "WebFetch(domain:www.madrasaccountancy.com)",
+      "Bash(node -e \"console.log\\('node ok'\\)\")",
+      "Bash(npm list *)",
+      "Bash(findstr docx *)",
+      "Bash(npm install *)",
+      "Bash(node generate-articles.js)",
+      "Bash(dir \"CFO-Talent-Intelligence-Series-10-Articles.docx\")",
+      "PowerShell(\\(Get-Item \"C:\\\\Users\\\\HP\\\\OneDrive\\\\1. Naresh Kumar\\\\New Begining\\\\Websites\\\\theCFOtalent.com\\\\cfotalent_site\\\\CFO-Talent-Intelligence-Series-10-Articles.docx\"\\).length / 1KB)",
+      "Bash(dir \"C:\\\\Users\\\\HP\\\\OneDrive\\\\1. Naresh Kumar\\\\New Begining\\\\Websites\\\\theCFOtalent.com\\\\cfotalent_site\\\\videos\")"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+# Dependencies — never commit
+node_modules/
+package-lock.json
+
+# Source documents — not part of the website
+*.docx
+*.doc
+*.xlsx
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp

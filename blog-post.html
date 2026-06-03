@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title id="meta-title">Article — the [CFO] talent</title>
+<meta name="description" id="meta-desc" content="">
+<meta name="robots" content="index, follow">
+<link rel="canonical" id="meta-canonical" href="https://thecfotalent.com/blog-post.html">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article">
+<meta property="og:site_name"   content="the [CFO] talent">
+<meta property="og:url"         id="og-url"   content="https://thecfotalent.com/blog-post.html">
+<meta property="og:title"       id="og-title" content="Article — the [CFO] talent">
+<meta property="og:description" id="og-desc"  content="">
+<meta property="og:image"       content="https://thecfotalent.com/og-image.png">
+<meta property="og:locale"      content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:site"        content="@thecfotalent">
+<meta name="twitter:title"       id="tw-title" content="Article — the [CFO] talent">
+<meta name="twitter:description" id="tw-desc"  content="">
+<meta name="twitter:image"       content="https://thecfotalent.com/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon"             type="image/x-icon"  href="/favicon.ico">
+<link rel="icon"             type="image/png"     sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon"             type="image/png"     sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon"                      sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest"         href="/site.webmanifest">
+<meta name="theme-color"     content="#7B3FA0">
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHZ1Q4ZE9G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SHZ1Q4ZE9G');
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════════════════════════════
+   DESIGN TOKENS
+════════════════════════════════════ */
+:root {
+  --purple:      #7B3FA0;
+  --purple-d:    #4A1D66;
+  --purple-l:    #914EB8;
+  --purple-pale: #F6F0FA;
+  --purple-mid:  #D8C4E6;
+  --black:       #0A0A0A;
+  --off-black:   #121212;
+  --white:       #FFFFFF;
+  --off-white:   #F9F9FB;
+  --text:        #111111;
+  --text-2:      #4A4A4F;
+  --text-3:      #8E8E93;
+  --border:      #EBE6F2;
+  --border-d:    #222224;
+  --nav-h:       72px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* ════════════════════════════════════
+   LOGO
+════════════════════════════════════ */
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;gap:0;flex-shrink:0}
+.logo-the{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:.02em;margin-bottom:-1px;padding-left:3px;color:var(--text-3)}
+.logo-main{font-family:'Outfit',sans-serif;font-size:23px;font-weight:700;display:flex;align-items:center;letter-spacing:-.01em}
+.logo-bracket{color:var(--purple);font-weight:700}
+.logo-cfo{color:var(--purple);font-weight:800}
+.logo-talent{color:var(--text-3);font-weight:500;margin-left:3px}
+
+/* ════════════════════════════════════
+   NAV
+════════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  height:var(--nav-h);
+  display:flex;align-items:center;
+  box-shadow:0 1px 12px rgba(0,0,0,.06);
+}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-menu{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-item{position:relative}
+.nav-link{
+  display:flex;align-items:center;gap:5px;font-size:13px;font-weight:500;
+  color:var(--text-2);text-decoration:none;padding:8px 14px;border-radius:3px;
+  white-space:nowrap;transition:color .15s,background .15s;
+  cursor:pointer;background:none;border:none;font-family:'Outfit',sans-serif;
+}
+.nav-link:hover,.nav-item.open>.nav-link{color:var(--text);background:var(--off-white)}
+.nav-link.active{color:var(--purple);font-weight:600}
+.chevron{font-size:9px;opacity:.5;transition:transform .2s}
+.nav-item.open>.nav-link .chevron{transform:rotate(180deg)}
+.btn-nav{background:var(--purple);color:var(--white)!important;padding:9px 20px;border-radius:3px;font-weight:600!important;font-size:13px!important;transition:background .2s!important}
+.btn-nav:hover{background:var(--purple-l)!important}
+.nav-right{display:flex;align-items:center;gap:8px}
+.simple-drop{
+  position:absolute;top:calc(100% + 1px);left:0;
+  background:var(--white);border:1px solid var(--border);
+  border-top:2px solid var(--purple);border-radius:0 0 6px 6px;
+  padding:8px;min-width:200px;display:none;
+  box-shadow:0 12px 40px rgba(0,0,0,.1);
+}
+.nav-item.open>.simple-drop{display:block}
+.simple-item{display:flex;align-items:center;padding:9px 12px;border-radius:3px;font-size:13px;color:var(--text-2);text-decoration:none;transition:background .15s,color .15s}
+.simple-item:hover{background:var(--purple-pale);color:var(--purple)}
+.country-select{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--text-2);background:var(--off-white);border:1px solid var(--border);border-radius:3px;padding:7px 12px;cursor:pointer;font-family:'Outfit',sans-serif;transition:border-color .2s;text-decoration:none}
+.country-select:hover{border-color:var(--purple)}
+
+/* ════════════════════════════════════
+   ARTICLE HERO
+════════════════════════════════════ */
+#article-hero{
+  padding:calc(var(--nav-h) + 56px) 0 0;
+  background:var(--black);
+  position:relative;overflow:hidden;
+}
+#article-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(123,63,160,.2) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 0% 100%, rgba(123,63,160,.1) 0%, transparent 50%);
+  pointer-events:none;
+}
+.hero-inner{max-width:800px;margin:0 auto;padding:0 48px 56px;position:relative;z-index:1}
+.back-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:500;color:rgba(255,255,255,.4);
+  text-decoration:none;margin-bottom:28px;
+  transition:color .15s;
+}
+.back-link:hover{color:rgba(255,255,255,.75)}
+.back-link svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
+.article-type-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 12px;border-radius:2px;margin-bottom:20px;
+}
+.badge-article  {background:rgba(16,185,129,.15);color:#6EE7B7}
+.badge-whitepaper{background:rgba(249,115,22,.15);color:#FED7AA}
+.badge-energy   {background:rgba(134,188,37,.15);color:#BEF264}
+.badge-course   {background:rgba(123,63,160,.2);color:var(--purple-mid)}
+.badge-template {background:rgba(59,130,246,.15);color:#BFDBFE}
+.article-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,4.5vw,56px);font-weight:600;
+  color:var(--white);line-height:1.1;letter-spacing:-.02em;
+  margin-bottom:24px;
+}
+.article-meta-row{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  font-size:12px;color:rgba(255,255,255,.4);
+  padding-top:24px;border-top:1px solid rgba(255,255,255,.08);
+}
+.article-meta-row strong{color:rgba(255,255,255,.7);font-weight:500}
+.meta-sep{width:3px;height:3px;background:rgba(255,255,255,.2);border-radius:50%}
+
+/* ════════════════════════════════════
+   ARTICLE LAYOUT
+════════════════════════════════════ */
+.article-layout{
+  max-width:1100px;margin:0 auto;padding:56px 48px;
+  display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:start;
+}
+
+/* ── Body copy ── */
+.article-body{min-width:0}
+.article-body h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(22px,2.5vw,30px);font-weight:600;
+  color:var(--text);line-height:1.2;letter-spacing:-.01em;
+  margin:40px 0 16px;
+}
+.article-body h2:first-child{margin-top:0}
+.article-body h3{
+  font-size:15px;font-weight:700;color:var(--text);
+  margin:28px 0 10px;letter-spacing:.01em;
+}
+.article-body p{
+  font-size:15px;color:var(--text-2);line-height:1.85;margin-bottom:18px;
+}
+.article-body ul,.article-body ol{
+  margin:0 0 18px 20px;
+}
+.article-body li{
+  font-size:15px;color:var(--text-2);line-height:1.75;margin-bottom:6px;
+}
+.article-body strong{color:var(--text);font-weight:600}
+.article-body em{font-style:italic;color:var(--text-2)}
+.article-body a{color:var(--purple);text-decoration:underline;text-underline-offset:3px}
+.article-body a:hover{color:var(--purple-l)}
+.article-body blockquote{
+  border-left:3px solid var(--purple);
+  margin:28px 0;padding:16px 24px;
+  background:var(--purple-pale);border-radius:0 4px 4px 0;
+}
+.article-body blockquote p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-style:italic;color:var(--purple-d);margin:0;line-height:1.55;
+}
+.article-body .callout{
+  background:var(--purple-pale);border:1px solid var(--purple-mid);
+  border-radius:6px;padding:20px 24px;margin:28px 0;
+}
+.article-body .callout-title{
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--purple);margin-bottom:8px;display:flex;align-items:center;gap:6px;
+}
+.article-body .callout p{margin-bottom:0;font-size:14px}
+.article-body hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+
+/* Inline table */
+.article-body table{
+  width:100%;border-collapse:collapse;margin:24px 0;font-size:13px;
+}
+.article-body th{
+  background:var(--purple-pale);color:var(--purple);
+  font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  padding:10px 14px;text-align:left;border-bottom:2px solid var(--purple-mid);
+}
+.article-body td{
+  padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-2);
+  vertical-align:top;
+}
+.article-body tr:last-child td{border-bottom:none}
+
+/* ── Sidebar ── */
+.article-sidebar{
+  position:sticky;top:calc(var(--nav-h) + 24px);
+  display:flex;flex-direction:column;gap:24px;
+}
+.sidebar-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:4px;padding:24px;
+}
+.sidebar-label{
+  font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:14px;
+}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.toc-list a{
+  font-size:12px;color:var(--text-2);text-decoration:none;
+  padding:6px 10px;border-radius:3px;display:block;
+  border-left:2px solid transparent;
+  transition:color .15s,border-color .15s,background .15s;
+  line-height:1.45;
+}
+.toc-list a:hover,.toc-list a.active{
+  color:var(--purple);border-left-color:var(--purple);background:var(--purple-pale);
+}
+.author-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.author-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--purple-d),var(--purple));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;
+  color:var(--white);flex-shrink:0;
+}
+.author-name{font-size:13px;font-weight:600;color:var(--text)}
+.author-creds{font-size:11px;color:var(--text-3);margin-top:2px}
+.author-bio{font-size:12px;color:var(--text-2);line-height:1.6}
+.cta-card{
+  background:linear-gradient(135deg,var(--purple-d) 0%,var(--purple) 100%);
+  border:none;border-radius:4px;padding:24px;color:var(--white);
+}
+.cta-card .sidebar-label{color:rgba(255,255,255,.5)}
+.cta-title{font-size:15px;font-weight:600;line-height:1.4;margin-bottom:8px}
+.cta-body{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:16px}
+.cta-btn{
+  display:block;text-align:center;background:var(--white);color:var(--purple);
+  font-size:12px;font-weight:700;padding:10px;border-radius:3px;
+  text-decoration:none;transition:opacity .2s;
+}
+.cta-btn:hover{opacity:.9}
+.share-row{display:flex;gap:8px;flex-wrap:wrap}
+.share-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:600;color:var(--text-2);
+  background:var(--off-white);border:1px solid var(--border);
+  border-radius:3px;padding:7px 12px;text-decoration:none;cursor:pointer;
+  transition:border-color .2s,color .2s;
+}
+.share-btn:hover{border-color:var(--purple);color:var(--purple)}
+.share-btn svg{width:12px;height:12px;stroke:currentColor;stroke-width:2;fill:none}
+
+/* ════════════════════════════════════
+   RELATED ARTICLES
+════════════════════════════════════ */
+.related-section{
+  background:var(--white);border-top:1px solid var(--border);
+  padding:56px 0;
+}
+.related-inner{max-width:1100px;margin:0 auto;padding:0 48px}
+.related-heading{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:600;color:var(--text);margin-bottom:32px;
+}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.rel-card{
+  background:var(--off-white);border:1px solid var(--border);
+  padding:24px;display:flex;flex-direction:column;
+  text-decoration:none;transition:background .2s,border-color .2s,transform .2s;
+}
+.rel-card:hover{background:var(--white);border-color:var(--purple);transform:translateY(-2px)}
+.rel-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+.rel-title{font-size:14px;font-weight:600;color:var(--text);line-height:1.45;margin-bottom:auto}
+.rel-meta{font-size:11px;color:var(--text-3);margin-top:14px}
+
+/* ════════════════════════════════════
+   NEWSLETTER STRIP
+════════════════════════════════════ */
+#newsletter{background:var(--off-black);padding:56px 0}
+.newsletter-inner{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.nl-text h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--white);margin-bottom:8px}
+.nl-text p{font-size:14px;color:rgba(255,255,255,.5);max-width:480px;line-height:1.65}
+.nl-form{display:flex;gap:8px;flex-wrap:wrap}
+.nl-input{font-family:'Outfit',sans-serif;font-size:13px;padding:12px 16px;border-radius:3px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--white);outline:none;width:280px;transition:border-color .2s}
+.nl-input::placeholder{color:rgba(255,255,255,.3)}
+.nl-input:focus{border-color:var(--purple)}
+.btn-primary{background:var(--purple);color:var(--white);text-decoration:none;font-size:13px;font-weight:600;padding:12px 24px;border-radius:3px;transition:background .2s;white-space:nowrap}
+.btn-primary:hover{background:var(--purple-l)}
+
+/* ════════════════════════════════════
+   FOOTER
+════════════════════════════════════ */
+footer{background:var(--black);padding:48px 0 32px;border-top:1px solid var(--border-d)}
+.footer-grid{max-width:1100px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.35);margin-top:12px;line-height:1.7;max-width:240px}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:8px}
+.footer-col a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{max-width:1100px;margin:32px auto 0;padding:20px 48px 0;border-top:1px solid var(--border-d);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,.25)}
+
+/* ════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════ */
+@media(max-width:900px){
+  .article-layout{grid-template-columns:1fr;gap:40px}
+  .article-sidebar{position:static}
+  .related-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-inner{padding:0 20px}
+  .nav-menu{display:none}
+  .hero-inner,.article-layout,.related-inner,.newsletter-inner,.footer-grid,.footer-bottom{padding-left:20px;padding-right:20px}
+  .article-h1{font-size:28px}
+  .related-grid{grid-template-columns:1fr}
+  .nl-input{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-the">the</span>
+      <span class="logo-main"><span class="logo-bracket">[</span><span class="logo-cfo">CFO</span><span class="logo-bracket">]</span><span class="logo-talent">&nbsp;talent</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item" id="ni-services">
+        <button class="nav-link" onclick="toggleNav('ni-services')">Our Services <span class="chevron">▾</span></button>
+        <div class="simple-drop" style="min-width:200px">
+          <a class="simple-item" href="index.html#services"><i data-lucide="bar-chart-2" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Performance &amp; FP&amp;A</a>
+          <a class="simple-item" href="index.html#services"><i data-lucide="settings-2" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Operations &amp; Control</a>
+          <a class="simple-item" href="index.html#digital"><i data-lucide="zap" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Digital as a Service</a>
+        </div>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="index.html#process">Pricing</a></li>
+      <li class="nav-item" id="ni-academy">
+        <button class="nav-link active" onclick="toggleNav('ni-academy')">Academy <span class="chevron">▾</span></button>
+        <div class="simple-drop" style="min-width:200px">
+          <a class="simple-item" href="courses.html"><i data-lucide="graduation-cap" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Executive Programs</a>
+          <a class="simple-item" href="resources.html"><i data-lucide="library" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Intelligence Library</a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <a href="us.html" class="country-select" style="text-decoration:none">🇺🇸 US · Energy</a>
+      <a href="#" class="nav-link btn-nav" onclick="qmOpen(event)">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ ARTICLE HERO ══ -->
+<header id="article-hero">
+  <div class="hero-inner">
+    <a class="back-link" href="resources.html">
+      <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Intelligence Library
+    </a>
+    <div class="article-type-badge" id="post-badge">[ Article ]</div>
+    <h1 class="article-h1" id="post-title">Article Title Goes Here</h1>
+    <div class="article-meta-row">
+      <span><strong id="post-author">Naresh Kumar FCCA</strong></span>
+      <span class="meta-sep"></span>
+      <span id="post-date">June 2026</span>
+      <span class="meta-sep"></span>
+      <span id="post-read-time">8 Min Read</span>
+      <span class="meta-sep"></span>
+      <span id="post-topic">Financial Engineering</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ ARTICLE BODY + SIDEBAR ══ -->
+<div class="article-layout">
+
+  <!-- Body -->
+  <article class="article-body" id="post-body">
+
+    <!-- ── SAMPLE CONTENT — replace this block per article ── -->
+    <h2 id="s1">Introduction</h2>
+    <p>Replace this placeholder content with the full article body. Each <code>&lt;h2&gt;</code> you add here will automatically appear in the Table of Contents sidebar. Use the structure below as a guide for formatting.</p>
+
+    <blockquote>
+      <p>"A practitioner-built framework that you can apply the week after reading it — not a theoretical model built for a conference slide."</p>
+    </blockquote>
+
+    <h2 id="s2">Section Two</h2>
+    <p>Body copy goes here. Use <strong>bold</strong> for emphasis, and <em>italics</em> sparingly. Keep paragraphs concise — practitioners skim before they read.</p>
+    <ul>
+      <li>First key point</li>
+      <li>Second key point</li>
+      <li>Third key point</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-title"><i data-lucide="info" style="width:13px;height:13px"></i> Practitioner Note</div>
+      <p>Use callout boxes for warnings, tips, or important definitions that deserve visual separation from the main copy.</p>
+    </div>
+
+    <h2 id="s3">Section Three</h2>
+    <p>Continue the article here. Tables work well for comparisons or reference data.</p>
+
+    <table>
+      <thead>
+        <tr><th>Column A</th><th>Column B</th><th>Column C</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Row 1 data</td><td>Row 1 data</td><td>Row 1 data</td></tr>
+        <tr><td>Row 2 data</td><td>Row 2 data</td><td>Row 2 data</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="s4">Conclusion</h2>
+    <p>Wrap up with a practitioner takeaway — what should the reader do differently next week as a result of reading this?</p>
+
+    <hr>
+    <p style="font-size:13px;color:var(--text-3)">Published by the [CFO] talent · <span id="post-date-footer">June 2026</span> · All frameworks are practitioner-derived and shared for educational purposes.</p>
+    <!-- ── END SAMPLE CONTENT ── -->
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+
+    <!-- Table of Contents -->
+    <div class="sidebar-card">
+      <div class="sidebar-label">In this article</div>
+      <ul class="toc-list" id="toc-list">
+        <!-- Populated by JS -->
+      </ul>
+    </div>
+
+    <!-- Author -->
+    <div class="sidebar-card">
+      <div class="sidebar-label">Written by</div>
+      <div class="author-row">
+        <div class="author-avatar">N</div>
+        <div>
+          <div class="author-name">Naresh Kumar</div>
+          <div class="author-creds">FCCA · Corporate Innovation Fellow</div>
+        </div>
+      </div>
+      <div class="author-bio">Practitioner CFO and financial engineer. ACCA AB Magazine cover feature (Nov 2025). Grow London Corporate Innovation Fellow, sponsored by the Mayor of London.</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-card">
+      <div class="sidebar-label">Work with us</div>
+      <div class="cta-title">Need a fractional CFO or finance team?</div>
+      <div class="cta-body">We deliver the frameworks in these articles as a managed service — across UK, UAE, US, and India.</div>
+      <a class="cta-btn" href="#" onclick="qmOpen(event)">Get a Quote →</a>
+    </div>
+
+    <!-- Share -->
+    <div class="sidebar-card">
+      <div class="sidebar-label">Share this article</div>
+      <div class="share-row">
+        <a class="share-btn" id="share-linkedin" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="share-btn" id="share-twitter" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          X / Twitter
+        </a>
+        <a class="share-btn" id="share-copy" href="#" onclick="copyLink(event)">
+          <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          Copy Link
+        </a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ══ RELATED ARTICLES ══ -->
+<section class="related-section">
+  <div class="related-inner">
+    <h2 class="related-heading">More from the <em>Intelligence Library</em></h2>
+    <div class="related-grid" id="related-grid">
+      <!-- Populated by JS from POSTS data -->
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-the" style="color:#555">the</span>
+        <span class="logo-main"><span class="logo-bracket">[</span><span class="logo-cfo">CFO</span><span class="logo-bracket">]</span><span class="logo-talent">&nbsp;talent</span></span>
+      </div>
+      <p>Financial engineering and operational intelligence for scale-ups and independent energy operators.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Academy</h4>
+      <ul>
+        <li><a href="courses.html">Executive Programs</a></li>
+        <li><a href="resources.html">Intelligence Library</a></li>
+        <li><a href="resources.html#articles">Articles</a></li>
+        <li><a href="resources.html">Templates</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Performance &amp; FP&amp;A</a></li>
+        <li><a href="index.html#services">Operations &amp; Control</a></li>
+        <li><a href="index.html#digital">Digital as a Service</a></li>
+        <li><a href="us.html">US · Energy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html#process">Our Approach</a></li>
+        <li><a href="index.html#cta">Get a Quote</a></li>
+        <li><a href="mailto:hello@thecfotalent.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 the [CFO] talent · All rights reserved</p>
+    <p>Registered in England &amp; Wales &nbsp;<a href="blog-author.html" style="opacity:.2;font-size:11px;color:inherit;text-decoration:none" title="Author">✦</a></p>
+  </div>
+</footer>
+
+<!-- ══ SHARED POST DATA ══ -->
+<script src="posts-data.js"></script>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+/* ── Nav toggle ── */
+function toggleNav(id){
+  const el=document.getElementById(id);
+  const wasOpen=el.classList.contains('open');
+  document.querySelectorAll('.nav-item.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) el.classList.add('open');
+}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.nav-item')) document.querySelectorAll('.nav-item.open').forEach(i=>i.classList.remove('open'));
+});
+
+/* POSTS loaded from posts-data.js */
+
+/* ── Read URL param & populate page ── */
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const post = POSTS.find(p => p.id === id);
+  if (!post) return; // leave placeholder content if no match
+
+  document.getElementById('post-badge').textContent = '[ ' + post.type + ' ]';
+  document.getElementById('post-badge').className = 'article-type-badge ' + post.badgeClass;
+  document.getElementById('post-title').textContent = post.title;
+  document.getElementById('post-author').textContent = post.author;
+  document.getElementById('post-date').textContent = post.date;
+  document.getElementById('post-date-footer').textContent = post.date;
+  document.getElementById('post-read-time').textContent = post.readTime;
+  document.getElementById('post-topic').textContent = post.topic;
+
+  // Meta tags
+  document.getElementById('meta-title').textContent = post.title + ' — the [CFO] talent';
+  document.getElementById('og-title').content = post.title + ' — the [CFO] talent';
+  document.getElementById('tw-title').content = post.title + ' — the [CFO] talent';
+
+  // Share links
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent(post.title + ' via @thecfotalent');
+  document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+  document.getElementById('share-twitter').href  = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+
+  // Inject article body if available
+  if (post.body) {
+    const postBody = document.getElementById('post-body');
+    if (postBody) postBody.innerHTML = post.body;
+  }
+})();
+
+/* ── Build Table of Contents from h2s in article ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const headings = document.querySelectorAll('.article-body h2');
+  const tocList  = document.getElementById('toc-list');
+  headings.forEach(h => {
+    if (!h.id) h.id = h.textContent.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+    const li = document.createElement('li');
+    const a  = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // Active TOC on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const link = tocList.querySelector('a[href="#' + e.target.id + '"]');
+      if (link) link.classList.toggle('active', e.isIntersecting);
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  headings.forEach(h => observer.observe(h));
+
+  // Related articles (pick 3 excluding current)
+  const params  = new URLSearchParams(window.location.search);
+  const current = params.get('id');
+  const others  = POSTS.filter(p => p.id !== current).slice(0, 3);
+  const grid    = document.getElementById('related-grid');
+  others.forEach(p => {
+    grid.innerHTML += `
+      <a class="rel-card" href="blog-post.html?id=${p.id}">
+        <div class="rel-tag">${p.type}</div>
+        <div class="rel-title">${p.title}</div>
+        <div class="rel-meta">${p.readTime} · ${p.date}</div>
+      </a>`;
+  });
+});
+
+/* ── Copy link ── */
+function copyLink(e){
+  e.preventDefault();
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = document.getElementById('share-copy');
+    btn.innerHTML = btn.innerHTML.replace('Copy Link','Copied!');
+    setTimeout(() => { btn.innerHTML = btn.innerHTML.replace('Copied!','Copy Link'); }, 2000);
+  });
+}
+</script>
+
+<!-- Lucide icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+</script>
+<!-- ══ QUOTE MODAL ══ -->
+<style>
+#qm-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,10,10,.72);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}
+#qm-overlay.open{display:flex}
+#qm-box{background:#fff;border-radius:8px;width:100%;max-width:520px;box-shadow:0 32px 80px rgba(0,0,0,.35);overflow:hidden;animation:qm-in .22s ease}
+@keyframes qm-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+#qm-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid #EBE6F2;background:#FAFAFA}
+#qm-head-left{display:flex;align-items:center;gap:10px}
+#qm-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#4A1D66,#7B3FA0);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:#fff;flex-shrink:0}
+#qm-title{font-size:14px;font-weight:700;color:#111;font-family:'Outfit',sans-serif}
+#qm-sub{font-size:11px;color:#8E8E93;font-family:'Outfit',sans-serif;margin-top:1px}
+#qm-close{background:none;border:none;cursor:pointer;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#8E8E93;font-size:16px;transition:background .15s;font-family:'Outfit',sans-serif}
+#qm-close:hover{background:#F6F0FA;color:#7B3FA0}
+#qm-body{padding:24px}
+.qm-field{margin-bottom:16px}
+.qm-field label{display:block;font-size:11px;font-weight:600;color:#4A4A4F;margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase;font-family:'Outfit',sans-serif}
+.qm-field input,.qm-field select,.qm-field textarea{width:100%;font-family:'Outfit',sans-serif;font-size:13px;color:#111;background:#F9F9FB;border:1px solid #EBE6F2;border-radius:4px;padding:10px 12px;outline:none;transition:border-color .2s}
+.qm-field input:focus,.qm-field select:focus,.qm-field textarea:focus{border-color:#7B3FA0;background:#fff}
+.qm-field textarea{resize:vertical;min-height:80px;line-height:1.6}
+.qm-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#qm-submit{width:100%;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;background:#7B3FA0;color:#fff;border:none;border-radius:4px;padding:13px;cursor:pointer;transition:background .2s;margin-top:4px}
+#qm-submit:hover{background:#914EB8}
+#qm-note{font-size:11px;color:#8E8E93;text-align:center;margin-top:10px;font-family:'Outfit',sans-serif}
+#qm-success{display:none;padding:32px 24px;text-align:center}
+#qm-success-icon{font-size:40px;margin-bottom:12px}
+#qm-success-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#111;margin-bottom:8px}
+#qm-success-body{font-size:13px;color:#4A4A4F;font-family:'Outfit',sans-serif;line-height:1.65}
+</style>
+<div id="qm-overlay" onclick="qmClose(event)">
+  <div id="qm-box">
+    <div id="qm-head">
+      <div id="qm-head-left">
+        <div id="qm-avatar">N</div>
+        <div>
+          <div id="qm-title">Get a Quote</div>
+          <div id="qm-sub">the [CFO] talent · We respond within 48 hours</div>
+        </div>
+      </div>
+      <button id="qm-close" onclick="qmClose()">✕</button>
+    </div>
+    <div id="qm-body">
+      <div class="qm-row">
+        <div class="qm-field">
+          <label>Your Name *</label>
+          <input type="text" id="qm-name" placeholder="Jane Smith">
+        </div>
+        <div class="qm-field">
+          <label>Company / Firm</label>
+          <input type="text" id="qm-company" placeholder="Acme Ltd">
+        </div>
+      </div>
+      <div class="qm-field">
+        <label>Email Address *</label>
+        <input type="email" id="qm-email" placeholder="jane@example.com">
+      </div>
+      <div class="qm-field">
+        <label>Service You Need</label>
+        <select id="qm-service">
+          <option value="">— Select a service —</option>
+          <option>Performance &amp; FP&amp;A</option>
+          <option>Operations &amp; Control</option>
+          <option>Digital as a Service</option>
+          <option>US · Energy Finance</option>
+          <option>Executive Programme / Training</option>
+          <option>Not sure yet — need advice</option>
+        </select>
+      </div>
+      <div class="qm-field">
+        <label>Tell us about your need</label>
+        <textarea id="qm-message" placeholder="Brief overview of your situation, team size, or what you'd like to achieve…"></textarea>
+      </div>
+      <button id="qm-submit" onclick="qmSubmit()">Send Enquiry →</button>
+      <p id="qm-note">No obligation · Proposal within 48 hours · Your data stays private</p>
+    </div>
+    <div id="qm-success">
+      <div id="qm-success-icon">✉</div>
+      <div id="qm-success-title">Enquiry sent — thank you</div>
+      <div id="qm-success-body">We'll review your message and send a detailed proposal within 48 hours.</div>
+    </div>
+  </div>
+</div>
+<script>
+function qmOpen(e){ if(e) e.preventDefault(); document.getElementById('qm-overlay').classList.add('open'); document.body.style.overflow='hidden'; }
+function qmClose(e){ if(e && e.target!==document.getElementById('qm-overlay')) return; document.getElementById('qm-overlay').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ document.getElementById('qm-overlay').classList.remove('open'); document.body.style.overflow=''; }});
+function qmSubmit(){
+  const name=document.getElementById('qm-name').value.trim();
+  const company=document.getElementById('qm-company').value.trim();
+  const email=document.getElementById('qm-email').value.trim();
+  const service=document.getElementById('qm-service').value;
+  const message=document.getElementById('qm-message').value.trim();
+  if(!name){alert('Please enter your name.');return;}
+  if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
+  const subject=encodeURIComponent('Quote Request — '+(service||'General Enquiry')+' | '+(company||name));
+  const body=encodeURIComponent('Name: '+name+'\nCompany: '+(company||'—')+'\nEmail: '+email+'\nService: '+(service||'—')+'\n\nMessage:\n'+(message||'—'));
+  window.location.href='mailto:hello@thecfotalent.com?subject='+subject+'&body='+body;
+  document.getElementById('qm-body').style.display='none';
+  document.getElementById('qm-success').style.display='block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://thecfotalent.com/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://thecfotalent.com/us.html</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Academy -->
+  <url><loc>https://thecfotalent.com/courses.html</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Intelligence Library -->
+  <url><loc>https://thecfotalent.com/resources.html</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Articles — Intelligence Library -->
+  <url><loc>https://thecfotalent.com/blog-post.html?id=management-accounts-always-late</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=cfo-talent-trap-hiring</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=sme-cashflow-forecasts-wrong</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=jib-accounting-financial-infrastructure</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=production-revenue-leakage</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=upstream-oilgas-vs-general-accounting</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=lease-accounting-asc842-ifrs16</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=ai-agents-variance-commentary</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=blockchain-finance-professional</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thecfotalent.com/blog-post.html?id=innovation-accounting-cfos-ai</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+</urlset>

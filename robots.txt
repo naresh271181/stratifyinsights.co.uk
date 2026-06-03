@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Internal authoring tools — not for public indexing
+Disallow: /blog-author.html
+
+Sitemap: https://thecfotalent.com/sitemap.xml
