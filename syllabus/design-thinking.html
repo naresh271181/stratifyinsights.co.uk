@@ -23,9 +23,19 @@
         <a class="simple-item" href="https://thecfotalent.com" target="_blank" rel="noopener"><i data-lucide="briefcase" style="width:14px;height:14px;stroke:var(--purple);flex-shrink:0"></i>the [CFO] talent</a>
       </div>
     </div>
+    <button class="menu-btn" id="menu-btn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
     <a href="../courses.html#enrol" class="nav-link btn-nav">Enrol</a>
   </div>
 </div></nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a class="mobile-nav-link" href="../courses.html">Executive Programs</a>
+  <a class="mobile-nav-link" href="../resources.html">Insights</a>
+  <div class="mobile-nav-divider"></div>
+  <div class="mobile-nav-label">Platforms</div>
+  <a class="mobile-nav-link" href="#">AI Native Platform</a>
+  <a class="mobile-nav-link" href="https://thecfotalent.com" target="_blank" rel="noopener">the [CFO] talent</a>
+  <a class="mobile-nav-enrol" href="../courses.html#enrol">Enrol or Enquire →</a>
+</div>
 
 <header class="course-hero" style="--pillar-color:#7B3FA0">
   <div class="hero-inner">
@@ -124,6 +134,13 @@
   <div class="footer-bottom"><span>© 2025 Stratify Insights. All rights reserved.</span><span>Advisory · Academy · Access</span></div>
 </div></footer>
 <script>
+function toggleMobileNav(){
+  const btn=document.getElementById('menu-btn');
+  const nav=document.getElementById('mobile-nav');
+  btn.classList.toggle('open');
+  nav.classList.toggle('open');
+  document.body.style.overflow=nav.classList.contains('open')?'hidden':'';
+}
 function toggleNav(id){const el=document.getElementById(id);const o=el.classList.contains('open');document.querySelectorAll('.nav-item.open').forEach(x=>x.classList.remove('open'));if(!o)el.classList.add('open');}
 document.addEventListener('click',e=>{if(!e.target.closest('.nav-item'))document.querySelectorAll('.nav-item.open').forEach(x=>x.classList.remove('open'));});
 window.addEventListener('load',()=>{if(window.lucide)lucide.createIcons();});

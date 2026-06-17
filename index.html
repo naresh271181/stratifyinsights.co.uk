@@ -152,27 +152,94 @@ nav{
 
 .hero-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 
+/* ═══ HAMBURGER BUTTON ═══ */
+.menu-btn{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;cursor:pointer;padding:8px;margin-left:8px;flex-shrink:0;
+}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
+.menu-btn.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ═══ MOBILE NAV DRAWER ═══ */
+.mobile-nav{
+  display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;
+  background:var(--white);z-index:99;overflow-y:auto;
+  padding:20px 20px 40px;flex-direction:column;gap:2px;
+  border-top:1px solid var(--border);
+}
+.mobile-nav.open{display:flex}
+.mobile-nav-link{
+  display:block;padding:14px 16px;font-size:15px;font-weight:500;
+  color:var(--text-2);text-decoration:none;border-radius:8px;
+  transition:background .15s,color .15s;
+}
+.mobile-nav-link:hover{background:var(--off-white);color:var(--text)}
+.mobile-nav-divider{height:1px;background:var(--border);margin:8px 0}
+.mobile-nav-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding:8px 16px 4px}
+.mobile-nav-enrol{
+  display:block;margin-top:16px;padding:15px 20px;
+  background:var(--purple);color:var(--white)!important;
+  font-size:15px;font-weight:600;text-align:center;
+  border-radius:8px;text-decoration:none;transition:background .2s;
+}
+.mobile-nav-enrol:hover{background:var(--purple-d)}
+
 /* ═══ RESPONSIVE ═══ */
+
+/* Wide screens */
+@media(min-width:1440px){
+  .hero-inner,.about-inner,.footer-inner{max-width:1400px}
+  .nav-inner{max-width:1400px}
+}
+
+/* Tablet landscape */
+@media(max-width:1100px){
+  .hero-inner{padding:48px 32px 72px}
+  #about{padding:80px 32px}
+  footer{padding:48px 32px 28px}
+}
+
+/* Tablet portrait */
 @media(max-width:900px){
-  .hero-inner{padding:48px 32px 64px}
+  .hero-inner{padding:40px 24px 60px}
   .pillars-row{flex-direction:column;max-width:100%}
   .pillar{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:18px 20px}
   .pillar:last-child{border-bottom:none}
-  .strip{padding:14px 20px;gap:20px}
-  #about{padding:64px 32px}
-  .cards-3{grid-template-columns:1fr}
+  .strip{padding:14px 24px;gap:20px}
+  #about{padding:64px 24px}
+  .cards-3{grid-template-columns:repeat(2,1fr)}
+  .footer-top{flex-direction:column;gap:32px}
+  .footer-cols{flex-wrap:wrap;gap:32px}
+  .footer-brand{flex:0 0 auto}
 }
-@media(max-width:600px){
-  .hero-inner{padding:32px 20px 52px}
+
+/* Mobile */
+@media(max-width:640px){
+  .menu-btn{display:flex}
+  .nav-right .nav-link:not(.btn-nav),.nav-right .nav-item{display:none}
+  .nav-right .btn-nav{display:none}
+
+  .hero-inner{padding:28px 16px 48px}
   .hero-kicker{font-size:10px}
   .hero-sub{font-size:14px;margin-bottom:28px}
   .btn-primary,.btn-ghost{font-size:14px;padding:12px 20px}
-  nav .nav-right .nav-link:not(.btn-nav){display:none}
+  .pillars-row{flex-direction:column;max-width:100%}
+  .pillar{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:16px}
+  .pillar:last-child{border-bottom:none}
   .strip{display:none}
-  #about{padding:48px 20px}
-  footer{padding:40px 20px 24px}
-  .footer-top{flex-direction:column;gap:32px}
+  #about{padding:48px 16px}
+  .cards-3{grid-template-columns:1fr}
+  footer{padding:40px 16px 24px}
   .footer-cols{flex-direction:column;gap:24px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px}
+  .nav-inner{padding:0 16px}
+}
+
+@media(max-width:400px){
+  .hero-h1{font-size:clamp(32px,9vw,48px)}
+  .hero-inner{padding:20px 12px 40px}
 }
 .btn-primary{
   display:inline-flex;align-items:center;gap:8px;
@@ -313,9 +380,20 @@ footer{
         </div>
       </div>
       <a href="courses.html#enrol" class="nav-link btn-nav">Enrol</a>
+      <button class="menu-btn" id="menu-btn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a class="mobile-nav-link" href="courses.html">Executive Programs</a>
+  <a class="mobile-nav-link" href="resources.html">Insights</a>
+  <div class="mobile-nav-divider"></div>
+  <div class="mobile-nav-label">Platforms</div>
+  <a class="mobile-nav-link" href="#">AI Native Platform</a>
+  <a class="mobile-nav-link" href="https://thecfotalent.com" target="_blank" rel="noopener">the [CFO] talent</a>
+  <a class="mobile-nav-enrol" href="courses.html#enrol">Enrol or Enquire →</a>
+</div>
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
@@ -465,6 +543,13 @@ footer{
 </footer>
 
 <script>
+function toggleMobileNav(){
+  const btn=document.getElementById('menu-btn');
+  const nav=document.getElementById('mobile-nav');
+  btn.classList.toggle('open');
+  nav.classList.toggle('open');
+  document.body.style.overflow=nav.classList.contains('open')?'hidden':'';
+}
 function toggleNav(id){
   const el = document.getElementById(id);
   const isOpen = el.classList.contains('open');
