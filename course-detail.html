@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/videos/logo_tumbnail.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title id="meta-title">Course — Stratify Insights</title>
+<meta name="description" id="meta-desc" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<style>
+:root{
+  --purple:#7B3FA0;--purple-d:#5C2E7E;--purple-l:#A66CC8;
+  --purple-pale:#F3EBF9;--purple-mid:rgba(166,108,200,.85);
+  --white:#FFFFFF;--off-white:#F8F7F5;
+  --text:#1A1A1E;--text-2:#3D3D44;--text-3:#6B6B75;
+  --border:#E4E2DF;--nav-h:72px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--text);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:var(--white);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center}
+.logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav-link{font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;color:var(--text-2);text-decoration:none;padding:8px 14px;border-radius:6px;background:none;border:none;cursor:pointer;transition:color .2s,background .2s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--text);background:var(--off-white)}
+.btn-nav{background:var(--purple);color:var(--white)!important;padding:9px 20px;border-radius:6px;font-weight:600;font-size:13px;transition:background .2s}
+.btn-nav:hover{background:var(--purple-d)}
+.chevron{font-size:10px;margin-left:3px;opacity:.7}
+.simple-drop{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:8px;min-width:240px;box-shadow:0 12px 40px rgba(0,0,0,.12);z-index:200}
+.nav-item.open .simple-drop{display:block}
+.simple-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:7px;color:var(--text-2);text-decoration:none;font-size:14px;transition:background .15s}
+.simple-item:hover{background:var(--off-white);color:var(--text)}
+
+/* ── HERO ── */
+#course-hero{padding:calc(var(--nav-h) + 48px) 0 0;background:#0A0A0C;position:relative;overflow:hidden}
+#course-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 100% 0%,rgba(123,63,160,.22) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 0% 100%,rgba(123,63,160,.10) 0%,transparent 50%);pointer-events:none}
+.hero-inner{max-width:860px;margin:0 auto;padding:0 48px 56px;position:relative;z-index:1}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:28px;transition:color .15s}
+.back-link:hover{color:rgba(255,255,255,.75)}
+.back-link svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
+.course-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:2px;margin-bottom:20px}
+.badge-p1{background:rgba(123,63,160,.2);color:#D8B4FE}
+.badge-p2{background:rgba(26,74,110,.3);color:#93C5FD}
+.badge-p3{background:rgba(27,94,58,.3);color:#86EFAC}
+.badge-p4{background:rgba(45,55,72,.4);color:#CBD5E0}
+.course-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,56px);font-weight:600;color:var(--white);line-height:1.1;letter-spacing:-.02em;margin-bottom:24px}
+.course-meta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.4);padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+.course-meta-row strong{color:rgba(255,255,255,.7);font-weight:500}
+.meta-sep{width:3px;height:3px;background:rgba(255,255,255,.2);border-radius:50%}
+
+/* ── LAYOUT ── */
+.course-layout{max-width:1100px;margin:0 auto;padding:56px 48px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start}
+.course-body{min-width:0}
+.course-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,30px);font-weight:600;color:var(--text);line-height:1.2;letter-spacing:-.01em;margin:40px 0 16px}
+.course-body h2:first-child{margin-top:0}
+.course-body h3{font-size:15px;font-weight:700;color:var(--text);margin:28px 0 10px;letter-spacing:.01em}
+.course-body p{font-size:15px;color:var(--text-2);line-height:1.85;margin-bottom:18px}
+.course-body ul,.course-body ol{margin:0 0 18px 20px}
+.course-body li{font-size:15px;color:var(--text-2);line-height:1.75;margin-bottom:6px}
+.course-body strong{color:var(--text);font-weight:600}
+.course-body blockquote{border-left:3px solid var(--purple);margin:28px 0;padding:16px 24px;background:var(--purple-pale);border-radius:0 4px 4px 0}
+.course-body blockquote p{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--purple-d);margin:0;line-height:1.55}
+.callout{background:var(--purple-pale);border:1px solid rgba(123,63,160,.2);border-radius:6px;padding:20px 24px;margin:28px 0}
+.callout-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+.callout p{margin-bottom:0;font-size:14px}
+
+/* Module list */
+.module-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.module-item{display:flex;gap:16px;padding:16px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px}
+.module-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--purple);flex-shrink:0;padding-top:2px;letter-spacing:.04em}
+.module-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.module-desc{font-size:13px;color:var(--text-3);line-height:1.6}
+
+/* ── SIDEBAR ── */
+.course-sidebar{position:sticky;top:calc(var(--nav-h) + 24px);display:flex;flex-direction:column;gap:20px}
+.sidebar-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px}
+.sidebar-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
+.enrol-card{background:linear-gradient(135deg,var(--purple-d) 0%,var(--purple) 100%);border:none;border-radius:10px;padding:28px;color:var(--white)}
+.enrol-card .sidebar-label{color:rgba(255,255,255,.5)}
+.enrol-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;line-height:1.2;margin-bottom:10px}
+.enrol-body{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:20px}
+.enrol-meta{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.enrol-meta-item{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.75)}
+.enrol-btn{display:block;text-align:center;background:var(--white);color:var(--purple);font-size:13px;font-weight:700;padding:12px;border-radius:6px;text-decoration:none;transition:opacity .2s}
+.enrol-btn:hover{opacity:.9}
+.detail-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.detail-row:last-child{border-bottom:none}
+.detail-label{color:var(--text-3)}
+.detail-val{color:var(--text);font-weight:600}
+.author-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--purple-d),var(--purple));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--white);flex-shrink:0}
+.author-name{font-size:13px;font-weight:600;color:var(--text)}
+.author-creds{font-size:11px;color:var(--text-3);margin-top:2px}
+.author-bio{font-size:12px;color:var(--text-2);line-height:1.6}
+
+/* ── RELATED ── */
+.related-section{background:var(--white);border-top:1px solid var(--border);padding:56px 0}
+.related-inner{max-width:1100px;margin:0 auto;padding:0 48px}
+.related-heading{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text);margin-bottom:32px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rel-card{background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:24px;display:flex;flex-direction:column;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.rel-card:hover{background:var(--white);border-color:var(--purple);transform:translateY(-2px)}
+.rel-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+.rel-title{font-size:14px;font-weight:600;color:var(--text);line-height:1.45;margin-bottom:auto}
+.rel-meta{font-size:11px;color:var(--text-3);margin-top:14px}
+
+/* ── FOOTER ── */
+footer{background:#0D0D10;border-top:1px solid rgba(255,255,255,.07);padding:56px 48px 32px}
+.footer-inner{max-width:1240px;margin:0 auto}
+.footer-top{display:flex;gap:64px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:32px}
+.footer-brand{flex:0 0 220px}
+.footer-brand-name{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:var(--purple);letter-spacing:-.01em;margin-bottom:10px}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.35);line-height:1.6}
+.footer-cols{display:flex;gap:48px;flex-wrap:wrap;flex:1}
+.footer-col h4{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.25);flex-wrap:wrap;gap:12px}
+
+@media(max-width:900px){.course-layout{grid-template-columns:1fr}.course-sidebar{position:static}.related-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.nav-inner,.hero-inner,.course-layout,.related-inner{padding-left:20px;padding-right:20px}.related-grid{grid-template-columns:1fr}.footer-top{flex-direction:column;gap:32px}}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="videos/logo.png" alt="Stratify Insights" style="height:40px;width:auto;display:block">
+    </a>
+    <div class="nav-right">
+      <a class="nav-link active" href="courses.html">Executive Programs</a>
+      <a class="nav-link" href="resources.html">Insights</a>
+      <div class="nav-item" id="ni-ventures" style="position:relative;display:inline-block">
+        <button class="nav-link" onclick="toggleNav('ni-ventures')">Platforms <span class="chevron">▾</span></button>
+        <div class="simple-drop" style="min-width:280px;right:0;left:auto">
+          <a class="simple-item" href="#"><i data-lucide="cpu" style="width:14px;height:14px;stroke:var(--purple);flex-shrink:0"></i>AI Native Platform</a>
+          <a class="simple-item" href="https://thecfotalent.com" target="_blank" rel="noopener"><i data-lucide="briefcase" style="width:14px;height:14px;stroke:var(--purple);flex-shrink:0"></i>the [CFO] talent</a>
+        </div>
+      </div>
+      <a href="courses.html#enrol" class="nav-link btn-nav">Enrol</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header id="course-hero">
+  <div class="hero-inner">
+    <a class="back-link" href="courses.html">
+      <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Executive Programs
+    </a>
+    <div class="course-badge" id="course-badge">[ Course ]</div>
+    <h1 class="course-h1" id="course-title">Course Title</h1>
+    <div class="course-meta-row">
+      <span><strong id="course-pillar">Pillar</strong></span>
+      <span class="meta-sep"></span>
+      <span id="course-duration">Duration</span>
+      <span class="meta-sep"></span>
+      <span id="course-format">Format</span>
+      <span class="meta-sep"></span>
+      <span id="course-delivery">Delivery</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── BODY + SIDEBAR ── -->
+<div class="course-layout">
+
+  <article class="course-body" id="course-body">
+    <!-- Populated by JS -->
+  </article>
+
+  <aside class="course-sidebar">
+
+    <!-- Enrol CTA -->
+    <div class="enrol-card">
+      <div class="sidebar-label">Ready to enrol?</div>
+      <div class="enrol-title" id="sidebar-title">Course Title</div>
+      <div class="enrol-meta" id="sidebar-meta"></div>
+      <div class="enrol-body">Individual enrolments, institutional team cohorts, and bespoke in-house delivery available.</div>
+      <a class="enrol-btn" href="courses.html#enrol">Enrol or Enquire →</a>
+    </div>
+
+    <!-- Course details -->
+    <div class="sidebar-card">
+      <div class="sidebar-label">Course details</div>
+      <div id="sidebar-details"></div>
+    </div>
+
+    <!-- Instructor -->
+    <div class="sidebar-card">
+      <div class="sidebar-label">Programme lead</div>
+      <div class="author-row">
+        <div class="author-avatar">N</div>
+        <div>
+          <div class="author-name">Naresh Kumar</div>
+          <div class="author-creds">FCCA · Innovation Fellow, Grow London</div>
+        </div>
+      </div>
+      <div class="author-bio">Practitioner CFO and financial engineer. ACCA Accounting & Business Magazine cover feature, November 2025. Grow London Corporate Innovation Fellow, sponsored by the Mayor of London.</div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ── RELATED COURSES ── -->
+<section class="related-section">
+  <div class="related-inner">
+    <h2 class="related-heading">More <em>Executive Programmes</em></h2>
+    <div class="related-grid" id="related-grid"></div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Stratify Insights</div>
+        <div class="footer-tagline">Enterprise intelligence, education, and platforms for institutions shaping what's next.</div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Academy</h4>
+          <a href="courses.html">Executive Programs</a>
+          <a href="courses.html#p1">Innovation Engine</a>
+          <a href="courses.html#p2">Tech Infrastructure</a>
+          <a href="courses.html#p3">Commercialisation</a>
+          <a href="courses.html#p4">Governance &amp; Trust</a>
+        </div>
+        <div class="footer-col">
+          <h4>Platforms</h4>
+          <a href="https://thecfotalent.com" target="_blank" rel="noopener">the [CFO] talent</a>
+          <a href="#">neuli.ai</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="resources.html">Insights</a>
+          <a href="courses.html#enrol">Enrol</a>
+          <a href="mailto:hello@stratifyinsights.co.uk">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Stratify Insights. All rights reserved.</span>
+      <span>Advisory · Academy · Access</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══ COURSE DATA ══ */
+const COURSES = [
+  {
+    id: 'design-thinking',
+    title: 'Design Thinking',
+    pillar: 'Innovation Engine',
+    pillarKey: 'p1',
+    badgeClass: 'badge-p1',
+    duration: '3 Weeks',
+    format: 'Cohort',
+    delivery: 'Workshop',
+    overview: 'Apply human-centred design methodology to enterprise problems. This programme equips practitioners with the full DT toolkit — empathy mapping, problem framing, rapid prototyping, and testing propositions with end users before build. Structured around real friction points inside large organisations.',
+    outcomes: ['Map user journeys and extract actionable insight from qualitative research','Frame complex organisational problems using HMW and POV techniques','Facilitate structured ideation sessions across cross-functional teams','Build and test low-fidelity prototypes with real stakeholders','Embed design thinking as a repeatable innovation process in your institution'],
+    modules: [
+      { num: '01', title: 'Empathy & Discovery', desc: 'User interviews, observation methods, empathy mapping, and synthesising insight from qualitative research.' },
+      { num: '02', title: 'Problem Framing', desc: 'How Might We statements, Point of View framing, and redefining the problem space before jumping to solutions.' },
+      { num: '03', title: 'Ideation Methods', desc: 'Brainstorming techniques, SCAMPER, worst possible idea, and structured divergent thinking facilitation.' },
+      { num: '04', title: 'Prototyping & Testing', desc: 'Low-fidelity prototyping, rapid testing cycles, feedback frameworks, and iterating based on real user response.' },
+      { num: '05', title: 'Institutional Embedding', desc: 'Making DT repeatable — sprint frameworks, playbooks, and building an innovation culture inside large organisations.' },
+    ],
+    audience: 'Strategy teams, innovation leads, product managers, and senior practitioners inside corporates, public sector agencies, and universities who need to solve complex problems with a structured, human-centred process.'
+  },
+  {
+    id: 'enterprise-product-management',
+    title: 'Product Management',
+    pillar: 'Innovation Engine',
+    pillarKey: 'p1',
+    badgeClass: 'badge-p1',
+    duration: '6 Weeks',
+    format: 'Cohort',
+    delivery: 'Live',
+    overview: 'End-to-end product management in enterprise environments. This programme covers roadmap strategy, stakeholder alignment, OKR frameworks, prioritisation models, and managing cross-functional delivery teams inside complex, regulated organisations.',
+    outcomes: ['Build and communicate a product roadmap aligned to strategic OKRs','Apply prioritisation frameworks (RICE, MoSCoW, Kano) to manage backlog decisions','Navigate stakeholder complexity in matrixed enterprise organisations','Design discovery and delivery processes for large-scale regulated environments','Lead cross-functional teams through ambiguity and competing priorities'],
+    modules: [
+      { num: '01', title: 'Product Strategy & Vision', desc: 'Defining product vision, aligning to business strategy, and translating OKRs into actionable roadmaps.' },
+      { num: '02', title: 'Discovery & Validation', desc: 'User research in enterprise contexts, hypothesis testing, and building the case for new product investment.' },
+      { num: '03', title: 'Prioritisation & Backlog Management', desc: 'RICE, MoSCoW, Kano models — choosing what to build and communicating the rationale to stakeholders.' },
+      { num: '04', title: 'Stakeholder & Governance', desc: 'Managing upwards, presenting to boards, and navigating procurement and compliance in large organisations.' },
+      { num: '05', title: 'Delivery & Launch', desc: 'Sprint planning, cross-functional team management, go-to-market coordination, and post-launch measurement.' },
+      { num: '06', title: 'Scaling & Portfolio Management', desc: 'Managing multiple products, platform thinking, and transitioning from feature delivery to product-led growth.' },
+    ],
+    audience: 'Product managers, programme directors, digital transformation leads, and senior practitioners in corporates, and universities building or scaling enterprise-grade digital products.'
+  },
+  {
+    id: 'open-innovation',
+    title: 'Open Innovation',
+    pillar: 'Innovation Engine',
+    pillarKey: 'p1',
+    badgeClass: 'badge-p1',
+    duration: '4 Weeks',
+    format: 'Cohort',
+    delivery: 'Live',
+    overview: 'Co-innovation frameworks for enterprise leaders. This programme covers building startup partnerships, hackathon design, open-source ecosystems, and accelerating value creation through outside-in digital capability acquisition.',
+    outcomes: ['Design and run structured innovation challenges and hackathons','Build and manage startup partnership programmes within enterprise governance','Evaluate open-source ecosystem opportunities for strategic value capture','Create outside-in capability acquisition frameworks','Measure and report the ROI of open innovation initiatives'],
+    modules: [
+      { num: '01', title: 'Foundations of Open Innovation', desc: 'The Chesbrough model, inside-out vs outside-in flows, and why enterprise innovation fails without external input.' },
+      { num: '02', title: 'Startup & Ecosystem Partnerships', desc: 'Scouting frameworks, partnership structures, IP considerations, and running pilot-to-scale programmes.' },
+      { num: '03', title: 'Hackathon & Challenge Design', desc: 'Designing high-quality innovation challenges, judging frameworks, and converting outputs into real initiatives.' },
+      { num: '04', title: 'Open Source Strategy', desc: 'Evaluating open-source ecosystems, contributing vs consuming, and building institutional capability on open platforms.' },
+    ],
+    audience: 'Innovation directors, R&D leaders, corporate venture teams, and innovation hub managers building structured external innovation programmes.'
+  },
+  {
+    id: 'agentic-ai',
+    title: 'Agentic AI in Finance',
+    pillar: 'Tech Infrastructure',
+    pillarKey: 'p2',
+    badgeClass: 'badge-p2',
+    duration: '5 Weeks',
+    format: 'Cohort',
+    delivery: 'Live',
+    overview: 'Deploy autonomous AI agents across enterprise workflows. This programme covers multi-agent orchestration, LLM integration, process automation architecture, and building self-improving systems that operate with minimal human intervention at scale.',
+    outcomes: ['Architect multi-agent systems for enterprise process automation','Integrate large language models into operational workflows safely and at scale','Design human-in-the-loop governance structures for autonomous systems','Evaluate and select the right agentic frameworks (LangChain, AutoGen, CrewAI)','Build a business case for agentic AI investment at board level'],
+    modules: [
+      { num: '01', title: 'Foundations of Agentic AI', desc: 'What makes an agent autonomous — LLMs, tools, memory, and planning. The difference between automation and agency.' },
+      { num: '02', title: 'Multi-Agent Architectures', desc: 'Orchestrator-agent patterns, agent communication protocols, and designing reliable multi-agent pipelines.' },
+      { num: '03', title: 'Enterprise Integration', desc: 'Connecting agents to enterprise systems — APIs, databases, ERP, and CRM platforms at production scale.' },
+      { num: '04', title: 'Governance & Risk', desc: 'Human-in-the-loop design, audit trails, failure modes, and regulatory considerations for autonomous systems.' },
+      { num: '05', title: 'Build & Deploy', desc: 'Hands-on deployment of a production-grade agentic workflow using current enterprise-ready frameworks.' },
+    ],
+    audience: 'Technology leaders, digital transformation directors, data engineers, and senior practitioners in organisations ready to move beyond AI pilots into autonomous, production-grade deployment.'
+  },
+  {
+    id: 'data-analytics',
+    title: 'Data Analytics',
+    pillar: 'Tech Infrastructure',
+    pillarKey: 'p2',
+    badgeClass: 'badge-p2',
+    duration: '4 Weeks',
+    format: 'Self-paced',
+    delivery: 'Online',
+    overview: 'Build enterprise-grade data infrastructure and intelligence layers. This programme covers data pipeline architecture, Power BI and Tableau dashboards, DAX modelling, and translating raw operational data into boardroom-ready decision intelligence.',
+    outcomes: ['Design and document an enterprise data pipeline from source to dashboard','Build production-quality Power BI reports with advanced DAX measures','Apply data storytelling principles to translate analysis into executive insight','Identify data quality issues and implement validation frameworks','Align data infrastructure decisions to strategic and regulatory requirements'],
+    modules: [
+      { num: '01', title: 'Data Architecture Fundamentals', desc: 'Data warehouses, data lakes, and medallion architecture — building the foundation for reliable analytics.' },
+      { num: '02', title: 'ETL & Pipeline Design', desc: 'Extract, transform, load principles, pipeline orchestration, and building robust data flows at enterprise scale.' },
+      { num: '03', title: 'Power BI & DAX Mastery', desc: 'Advanced DAX modelling, data model design, calculated tables, and building dynamic, drill-through dashboards.' },
+      { num: '04', title: 'Data Storytelling', desc: 'Translating analysis into executive decisions — visual hierarchy, narrative frameworks, and presenting insight to boards.' },
+    ],
+    audience: 'Finance, operations, and strategy professionals who need to build or commission enterprise analytics capability — no prior data engineering experience required.'
+  },
+  {
+    id: 'blockchain-web3',
+    title: 'Blockchain & Web3',
+    pillar: 'Tech Infrastructure',
+    pillarKey: 'p2',
+    badgeClass: 'badge-p2',
+    duration: '4 Weeks',
+    format: 'Self-paced',
+    delivery: 'Online',
+    overview: 'Core blockchain and Web3 concepts for enterprise. This programme covers DeFi protocols, tokenisation, smart contract architecture, cross-border applications, and the regulatory landscape across UK, UAE, and US jurisdictions.',
+    outcomes: ['Evaluate blockchain use cases relevant to your institution or sector','Understand tokenisation models and their commercial and regulatory implications','Read and interpret smart contract architecture without writing code','Assess DeFi protocols for enterprise treasury and payments applications','Navigate the UK, UAE, and US regulatory frameworks for digital assets'],
+    modules: [
+      { num: '01', title: 'Blockchain Architecture', desc: 'Distributed ledger fundamentals, consensus mechanisms, public vs private chains, and enterprise blockchain platforms.' },
+      { num: '02', title: 'Tokenisation & Digital Assets', desc: 'Asset tokenisation frameworks, security tokens, NFTs in enterprise, and stablecoin infrastructure.' },
+      { num: '03', title: 'Smart Contracts', desc: 'How smart contracts work, Solidity fundamentals for non-engineers, auditing considerations, and failure case studies.' },
+      { num: '04', title: 'DeFi & Cross-Border Finance', desc: 'Decentralised protocols for payments, lending, and settlement — and where enterprise adoption is viable today.' },
+    ],
+    audience: 'Finance directors, treasury managers, legal counsel, and senior enterprise practitioners evaluating blockchain adoption or advising institutions on digital asset strategy.'
+  },
+  {
+    id: 'digital-ip',
+    title: 'Digital IP Strategy',
+    pillar: 'Commercialisation Layer',
+    pillarKey: 'p3',
+    badgeClass: 'badge-p3',
+    duration: '4 Weeks',
+    format: 'Self-paced',
+    delivery: 'Online',
+    overview: 'Monetise intellectual property at enterprise scale. This programme covers turning proprietary models, frameworks, and methodologies into licensable digital products, SaaS tools, and scalable revenue streams through strategic IP frameworks.',
+    outcomes: ['Identify and map the IP assets inside your institution or enterprise','Apply IP monetisation frameworks to frameworks, data, and methodologies','Structure licensing, spin-out, and SaaS commercialisation models','Navigate IP ownership in collaborative R&D and open-source contexts','Build an IP commercialisation roadmap aligned to institutional strategy'],
+    modules: [
+      { num: '01', title: 'IP Audit & Identification', desc: 'Mapping proprietary knowledge, frameworks, data, and methods — finding the commercialisable assets hidden in plain sight.' },
+      { num: '02', title: 'Commercialisation Models', desc: 'Licensing, spin-outs, white-labelling, SaaS packaging, and franchise models for institutional IP.' },
+      { num: '03', title: 'Digital Product Design', desc: 'Translating methodology into digital product — course, tool, API, or platform — and choosing the right format for the asset.' },
+      { num: '04', title: 'Revenue & Growth Strategy', desc: 'Pricing models, GTM frameworks, partner channels, and scaling IP-derived revenue inside regulated institutions.' },
+    ],
+    audience: 'University technology transfer offices, R&D leaders, innovation directors, and enterprise teams with valuable proprietary frameworks seeking to generate revenue from existing knowledge assets.'
+  },
+  {
+    id: 'strategic-financial-modelling',
+    title: 'Strategic Financial Modelling',
+    pillar: 'Commercialisation Layer',
+    pillarKey: 'p3',
+    badgeClass: 'badge-p3',
+    duration: '5 Weeks',
+    format: 'Cohort',
+    delivery: 'Live',
+    overview: 'Build investor-grade financial models that underpin commercialisation decisions. This programme covers integrated P&L, cash flow and balance sheet models, unit economics, scenario analysis, and capital structure design for growth and R&D-stage businesses.',
+    outcomes: ['Build a fully integrated three-statement financial model from scratch','Model unit economics and cohort analysis for growth-stage ventures','Design scenario and sensitivity analysis frameworks for board presentations','Structure capital models for R&D-stage enterprises seeking external funding','Translate financial model outputs into investor-grade narrative and storytelling'],
+    modules: [
+      { num: '01', title: 'Financial Model Architecture', desc: 'Best-practice model design, assumption structuring, and building the integrated P&L–Balance Sheet–Cash Flow engine.' },
+      { num: '02', title: 'Unit Economics & Cohort Analysis', desc: 'CAC, LTV, payback period, cohort retention modelling, and building the commercial case for growth investment.' },
+      { num: '03', title: 'Scenario & Sensitivity Analysis', desc: 'Scenario frameworks, Monte Carlo thinking, and communicating uncertainty to boards and investors.' },
+      { num: '04', title: 'Capital Structure & Funding Models', desc: 'Equity dilution, convertible notes, grant-adjusted returns, and modelling the impact of different financing structures.' },
+      { num: '05', title: 'Investor Narrative & Presentation', desc: 'Translating model outputs into board packs, investor decks, and strategic narratives that drive funding decisions.' },
+    ],
+    audience: 'CFOs, finance directors, strategy leads, and commercialisation managers in growth companies, university spin-outs, and enterprise R&D functions building the financial case for innovation investment.'
+  },
+  {
+    id: 'ai-governance',
+    title: 'AI & Enterprise Governance',
+    pillar: 'Governance & Trust',
+    pillarKey: 'p4',
+    badgeClass: 'badge-p4',
+    duration: '4 Weeks',
+    format: 'Cohort',
+    delivery: 'Live',
+    overview: 'Design institutional governance frameworks for autonomous systems. This programme covers AI risk classification, policy-as-code architecture, board-level accountability structures, and embedding ethical guardrails into enterprise AI deployment at scale.',
+    outcomes: ['Classify AI systems under the EU AI Act and UK AI governance frameworks','Design a policy-as-code governance architecture for autonomous AI deployment','Build board-level accountability structures for AI risk oversight','Embed ethical guardrails into procurement, design, and deployment processes','Create an AI governance roadmap aligned to your institution\'s risk appetite'],
+    modules: [
+      { num: '01', title: 'AI Risk Classification', desc: 'EU AI Act tiers, UK and US frameworks, and building a risk taxonomy for AI systems in your institution.' },
+      { num: '02', title: 'Policy-as-Code Architecture', desc: 'Embedding governance into technical systems — guardrails, audit trails, and automated compliance checking at scale.' },
+      { num: '03', title: 'Board Accountability & Reporting', desc: 'Board-level AI governance structures, CISO and Chief AI Officer roles, and designing AI oversight committees.' },
+      { num: '04', title: 'Ethical Guardrails in Practice', desc: 'Bias detection, explainability requirements, data provenance, and operationalising ethical AI commitments.' },
+    ],
+    audience: 'Board members, CIOs, legal and compliance officers, and governance professionals in regulated institutions building the infrastructure to deploy AI safely, accountably, and at scale.'
+  }
+];
+
+/* ══ RENDER ══ */
+(function(){
+  const id = new URLSearchParams(window.location.search).get('id');
+  const course = COURSES.find(c => c.id === id) || COURSES[0];
+
+  // Meta
+  document.getElementById('meta-title').textContent = course.title + ' — Stratify Insights';
+  document.getElementById('meta-desc').content = course.overview;
+
+  // Hero
+  document.getElementById('course-badge').textContent = '[ ' + course.pillar + ' ]';
+  document.getElementById('course-badge').className = 'course-badge ' + course.badgeClass;
+  document.getElementById('course-title').textContent = course.title;
+  document.getElementById('course-pillar').textContent = course.pillar;
+  document.getElementById('course-duration').textContent = course.duration;
+  document.getElementById('course-format').textContent = course.format;
+  document.getElementById('course-delivery').textContent = course.delivery;
+
+  // Body
+  const modules = course.modules.map(m => `
+    <div class="module-item">
+      <div class="module-num">Module ${m.num}</div>
+      <div><div class="module-title">${m.title}</div><div class="module-desc">${m.desc}</div></div>
+    </div>`).join('');
+
+  const outcomes = course.outcomes.map(o => `<li>${o}</li>`).join('');
+
+  document.getElementById('course-body').innerHTML = `
+    <h2>Programme Overview</h2>
+    <p>${course.overview}</p>
+
+    <blockquote><p>Practitioner-led, institution-ready — frameworks you can deploy the week after completion.</p></blockquote>
+
+    <h2>What You'll Learn</h2>
+    <ul>${outcomes}</ul>
+
+    <h2>Programme Modules</h2>
+    <div class="module-list">${modules}</div>
+
+    <h2>Who This Programme Is For</h2>
+    <p>${course.audience}</p>
+
+    <div class="callout">
+      <div class="callout-title">Institutional Delivery</div>
+      <p>This programme is available for bespoke in-house delivery for Corporates, Universities, and Professional Bodies — tailored to your strategic priorities and cohort size. <a href="mailto:hello@stratifyinsights.co.uk?subject=Bespoke%20Programme%20Enquiry%20—%20${encodeURIComponent(course.title)}" style="color:var(--purple)">Get in touch →</a></p>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+    <p style="font-size:13px;color:var(--text-3)">Stratify Insights · Academy · All programmes are practitioner-derived and built for institutional application.</p>
+  `;
+
+  // Sidebar title
+  document.getElementById('sidebar-title').textContent = course.title;
+
+  // Sidebar meta
+  document.getElementById('sidebar-meta').innerHTML = `
+    <div class="enrol-meta-item"><i data-lucide="clock" style="width:14px;height:14px;stroke:rgba(255,255,255,.6);flex-shrink:0"></i>${course.duration}</div>
+    <div class="enrol-meta-item"><i data-lucide="users" style="width:14px;height:14px;stroke:rgba(255,255,255,.6);flex-shrink:0"></i>${course.format}</div>
+    <div class="enrol-meta-item"><i data-lucide="monitor" style="width:14px;height:14px;stroke:rgba(255,255,255,.6);flex-shrink:0"></i>${course.delivery}</div>
+  `;
+
+  // Sidebar details
+  document.getElementById('sidebar-details').innerHTML = `
+    <div class="detail-row"><span class="detail-label">Pillar</span><span class="detail-val">${course.pillar}</span></div>
+    <div class="detail-row"><span class="detail-label">Duration</span><span class="detail-val">${course.duration}</span></div>
+    <div class="detail-row"><span class="detail-label">Format</span><span class="detail-val">${course.format}</span></div>
+    <div class="detail-row"><span class="detail-label">Delivery</span><span class="detail-val">${course.delivery}</span></div>
+    <div class="detail-row"><span class="detail-label">Modules</span><span class="detail-val">${course.modules.length}</span></div>
+    <div class="detail-row"><span class="detail-label">Certificate</span><span class="detail-val">CPD Accredited</span></div>
+  `;
+
+  // Related courses (3 from other pillars)
+  const related = COURSES.filter(c => c.id !== course.id).slice(0, 3);
+  document.getElementById('related-grid').innerHTML = related.map(c => `
+    <a class="rel-card" href="course-detail.html?id=${c.id}">
+      <div class="rel-tag">${c.pillar}</div>
+      <div class="rel-title">${c.title}</div>
+      <div class="rel-meta">${c.duration} · ${c.format}</div>
+    </a>`).join('');
+
+  // Icons
+  if(window.lucide) lucide.createIcons();
+})();
+
+window.addEventListener('load', () => { if(window.lucide) lucide.createIcons(); });
+
+function toggleNav(id){
+  const el = document.getElementById(id);
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.nav-item.open').forEach(x=>x.classList.remove('open'));
+  if(!isOpen) el.classList.add('open');
+}
+document.addEventListener('click', e=>{
+  if(!e.target.closest('.nav-item')) document.querySelectorAll('.nav-item.open').forEach(x=>x.classList.remove('open'));
+});
+</script>
+</body>
+</html>

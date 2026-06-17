@@ -3,5 +3,7 @@ Allow: /
 
 # Internal authoring tools — not for public indexing
 Disallow: /blog-author.html
+Disallow: /_course-template.html
+Disallow: /course-detail.html
 
-Sitemap: https://thecfotalent.com/sitemap.xml
+Sitemap: https://stratifyinsights.co.uk/sitemap.xml

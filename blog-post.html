@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -25,10 +25,7 @@
 <meta name="twitter:image"       content="https://thecfotalent.com/og-image.png">
 
 <!-- Favicon -->
-<link rel="icon"             type="image/x-icon"  href="/favicon.ico">
-<link rel="icon"             type="image/png"     sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon"             type="image/png"     sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon"                      sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="videos/logo_tumbnail.png">
 <link rel="manifest"         href="/site.webmanifest">
 <meta name="theme-color"     content="#7B3FA0">
 
@@ -373,30 +370,20 @@ footer{background:var(--black);padding:48px 0 32px;border-top:1px solid var(--bo
 <nav>
   <div class="nav-inner">
     <a class="logo" href="index.html">
-      <span class="logo-the">the</span>
-      <span class="logo-main"><span class="logo-bracket">[</span><span class="logo-cfo">CFO</span><span class="logo-bracket">]</span><span class="logo-talent">&nbsp;talent</span></span>
+      <img src="videos/logo.png" alt="Stratify Insights" style="height:40px;width:auto;display:block">
     </a>
-    <ul class="nav-menu">
-      <li class="nav-item" id="ni-services">
-        <button class="nav-link" onclick="toggleNav('ni-services')">Our Services <span class="chevron">▾</span></button>
-        <div class="simple-drop" style="min-width:200px">
-          <a class="simple-item" href="index.html#services"><i data-lucide="bar-chart-2" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Performance &amp; FP&amp;A</a>
-          <a class="simple-item" href="index.html#services"><i data-lucide="settings-2" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Operations &amp; Control</a>
-          <a class="simple-item" href="index.html#digital"><i data-lucide="zap" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Digital as a Service</a>
-        </div>
-      </li>
-      <li class="nav-item"><a class="nav-link" href="index.html#process">Pricing</a></li>
-      <li class="nav-item" id="ni-academy">
-        <button class="nav-link active" onclick="toggleNav('ni-academy')">Academy <span class="chevron">▾</span></button>
-        <div class="simple-drop" style="min-width:200px">
-          <a class="simple-item" href="courses.html"><i data-lucide="graduation-cap" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Executive Programs</a>
-          <a class="simple-item" href="resources.html"><i data-lucide="library" style="width:14px;height:14px;stroke:var(--purple);margin-right:8px"></i>Intelligence Library</a>
-        </div>
-      </li>
-    </ul>
+    <ul class="nav-menu"></ul>
     <div class="nav-right">
-      <a href="us.html" class="country-select" style="text-decoration:none">🇺🇸 US · Energy</a>
-      <a href="#" class="nav-link btn-nav" onclick="qmOpen(event)">Get a Quote</a>
+      <a class="nav-link" href="courses.html">Executive Programs</a>
+      <a class="nav-link" href="resources.html">Insights</a>
+      <div class="nav-item" id="ni-ventures" style="position:relative;display:inline-block">
+        <button class="nav-link" onclick="toggleNav('ni-ventures')">Platforms <span class="chevron">▾</span></button>
+        <div class="simple-drop" style="min-width:280px;right:0;left:auto">
+          <a class="simple-item" href="#"><i data-lucide="cpu" style="width:14px;height:14px;stroke:var(--purple);vertical-align:middle;margin-right:8px"></i>AI Native Platform</a>
+          <a class="simple-item" href="https://thecfotalent.com" target="_blank" rel="noopener"><i data-lucide="briefcase" style="width:14px;height:14px;stroke:var(--purple);vertical-align:middle;margin-right:8px"></i>the [CFO] talent</a>
+        </div>
+      </div>
+      <a href="courses.html#enrol" class="nav-link btn-nav">Enrol</a>
     </div>
   </div>
 </nav>
@@ -406,7 +393,7 @@ footer{background:var(--black);padding:48px 0 32px;border-top:1px solid var(--bo
   <div class="hero-inner">
     <a class="back-link" href="resources.html">
       <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Back to Intelligence Library
+      Back to Insights
     </a>
     <div class="article-type-badge" id="post-badge">[ Article ]</div>
     <h1 class="article-h1" id="post-title">Article Title Goes Here</h1>
@@ -528,7 +515,7 @@ footer{background:var(--black);padding:48px 0 32px;border-top:1px solid var(--bo
 <!-- ══ RELATED ARTICLES ══ -->
 <section class="related-section">
   <div class="related-inner">
-    <h2 class="related-heading">More from the <em>Intelligence Library</em></h2>
+    <h2 class="related-heading">More from the <em>Insights</em></h2>
     <div class="related-grid" id="related-grid">
       <!-- Populated by JS from POSTS data -->
     </div>
@@ -549,7 +536,7 @@ footer{background:var(--black);padding:48px 0 32px;border-top:1px solid var(--bo
       <h4>Academy</h4>
       <ul>
         <li><a href="courses.html">Executive Programs</a></li>
-        <li><a href="resources.html">Intelligence Library</a></li>
+        <li><a href="resources.html">Insights</a></li>
         <li><a href="resources.html#articles">Articles</a></li>
         <li><a href="resources.html">Templates</a></li>
       </ul>

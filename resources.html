@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Resources — the [CFO] talent | Financial Engineering & Operational Intelligence</title>
+<title>Insights — Stratify Insights</title>
 
 <!-- ── SEO ── -->
 <meta name="description" content="Explore courses, blogs, case studies, ebooks, and practitioner resources from the [CFO] talent — built for finance professionals, KPO teams, and energy operators.">
@@ -30,10 +30,7 @@
 <meta name="twitter:image"       content="https://thecfotalent.com/og-image.png">
 
 <!-- ── Favicon ── -->
-<link rel="icon"             type="image/x-icon"  href="/favicon.ico">
-<link rel="icon"             type="image/png"     sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon"             type="image/png"     sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon"                      sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="videos/logo_tumbnail.png">
 <link rel="manifest"         href="/site.webmanifest">
 <meta name="theme-color"     content="#7B3FA0">
 
@@ -394,21 +391,17 @@ nav{
    FOOTER
 ════════════════════════════════════ */
 footer{background:var(--off-black);border-top:1px solid var(--border-d);padding:52px 0 28px}
-.footer-grid{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:44px}
-.footer-brand p{font-size:13px;color:#444;line-height:1.6;margin-top:14px;max-width:260px}
-.footer-col h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#444;margin-bottom:14px}
+.footer-grid{max-width:1240px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:36px}
+.footer-brand p{font-size:13px;color:#444;line-height:1.6;margin-top:12px;max-width:240px}
+.footer-col h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#444;margin-bottom:12px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px}
 .footer-col a{font-size:13px;color:#444;text-decoration:none;transition:color .2s}
 .footer-col a:hover{color:var(--purple-l)}
-.footer-bottom{max-width:1200px;margin:0 auto;padding:20px 48px 0;border-top:1px solid var(--border-d);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom{max-width:1240px;margin:0 auto;padding:20px 48px 0;border-top:1px solid var(--border-d);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .footer-copy{font-size:12px;color:#333}
 .footer-legal{display:flex;gap:22px}
-.footer-legal a{font-size:12px;color:#333;text-decoration:none;transition:color .2s}
+.footer-legal a{font-size:12px;color:#333;text-decoration:none}
 .footer-legal a:hover{color:#666}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px;padding:0 20px}
-  .footer-bottom{padding:20px 20px 0}
-  .cta-inner,.newsletter-inner{padding:0 20px}
-}
 /* ════════════════════════════════════
    NEWS SECTION
 ════════════════════════════════════ */
@@ -457,30 +450,20 @@ footer{background:var(--off-black);border-top:1px solid var(--border-d);padding:
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="logo">
-      <span class="logo-the">the</span>
-      <span class="logo-main"><span class="logo-bracket">[</span><span class="logo-cfo">CFO</span><span class="logo-bracket">]</span><span class="logo-talent">&nbsp;talent</span></span>
+      <img src="videos/logo.png" alt="Stratify Insights" style="height:40px;width:auto;display:block">
     </a>
-    <ul class="nav-menu">
-      <li class="nav-item" id="ni-services">
-        <button class="nav-link" onclick="toggleNav('ni-services')">Our Services <span class="chevron">▾</span></button>
-        <div class="simple-drop" style="min-width:200px">
-          <a class="simple-item" href="index.html#services">Performance &amp; FP&amp;A</a>
-          <a class="simple-item" href="index.html#services">Operations &amp; Control</a>
-          <a class="simple-item" href="index.html#digital">Digital as a Service</a>
-        </div>
-      </li>
-      <li class="nav-item"><a class="nav-link" href="index.html#process">Pricing</a></li>
-      <li class="nav-item" id="ni-resources">
-        <button class="nav-link active" onclick="toggleNav('ni-resources')">Academy <span class="chevron">▾</span></button>
-        <div class="simple-drop" style="min-width:200px">
-          <a class="simple-item" href="courses.html"><i data-lucide="graduation-cap" style="width:14px;height:14px;stroke:var(--purple);vertical-align:middle;margin-right:8px"></i>Executive Programs</a>
-          <a class="simple-item" href="resources.html"><i data-lucide="library" style="width:14px;height:14px;stroke:var(--purple);vertical-align:middle;margin-right:8px"></i>Intelligence Library</a>
-        </div>
-      </li>
-    </ul>
+    <ul class="nav-menu"></ul>
     <div class="nav-right">
-      <a href="us.html" class="country-select" style="text-decoration:none">🇺🇸 US · Energy</a>
-      <a href="#" class="nav-link btn-nav" onclick="qmOpen(event)">Get a Quote</a>
+      <a class="nav-link" href="courses.html">Executive Programs</a>
+      <a class="nav-link active" href="resources.html">Insights</a>
+      <div class="nav-item" id="ni-ventures" style="position:relative;display:inline-block">
+        <button class="nav-link" onclick="toggleNav('ni-ventures')">Platforms <span class="chevron">▾</span></button>
+        <div class="simple-drop" style="min-width:280px;right:0;left:auto">
+          <a class="simple-item" href="#"><i data-lucide="cpu" style="width:14px;height:14px;stroke:var(--purple);vertical-align:middle;margin-right:8px"></i>AI Native Platform</a>
+          <a class="simple-item" href="https://thecfotalent.com" target="_blank" rel="noopener"><i data-lucide="briefcase" style="width:14px;height:14px;stroke:var(--purple);vertical-align:middle;margin-right:8px"></i>the [CFO] talent</a>
+        </div>
+      </div>
+      <a href="blog-author.html" class="nav-link btn-nav">Submit Article</a>
     </div>
   </div>
 </nav>
@@ -488,12 +471,12 @@ footer{background:var(--off-black);border-top:1px solid var(--border-d);padding:
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-kicker">Financial Intelligence Hub</div>
-    <h1 class="hero-h1">Your Finance<br><em>Resource Hub</em></h1>
-    <p class="hero-sub">Explore our courses, blogs, case studies, ebooks and practitioner resources — built for finance professionals and energy operators.</p>
+    <div class="hero-kicker">Enterprise Intelligence Hub</div>
+    <h1 class="hero-h1"><em>Insights</em></h1>
+    <p class="hero-sub">Explore articles, whitepapers, case studies, and practitioner resources at the intersection of AI, innovation, commercialisation, and governance — built for institutions shaping what's next.</p>
 
     <div class="search-wrap">
-      <input class="search-input" type="text" placeholder="Search by topic, software, or challenge...">
+      <input class="search-input" type="text" placeholder="Search by topic, pillar, or challenge...">
       <button class="search-btn">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         Search
@@ -502,10 +485,10 @@ footer{background:var(--off-black);border-top:1px solid var(--border-d);padding:
 
     <div class="quick-filters">
       <span class="qf-label">Quick:</span>
-      <a class="qf-pill active" href="#">JIB Workflows</a>
-      <a class="qf-pill" href="#">FP&amp;A Models</a>
-      <a class="qf-pill" href="#">COPAS Rules</a>
-      <a class="qf-pill" href="#">Cash Flow Templates</a>
+      <a class="qf-pill active" href="#">AI &amp; Governance</a>
+      <a class="qf-pill" href="#">Innovation Design</a>
+      <a class="qf-pill" href="#">Commercialisation</a>
+      <a class="qf-pill" href="#">Tech Infrastructure</a>
       <a class="qf-pill" href="#">Webinars</a>
     </div>
   </div>
@@ -565,12 +548,12 @@ footer{background:var(--off-black);border-top:1px solid var(--border-d);padding:
         </div>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-head">Categories</div>
+        <div class="sidebar-head">Pillars</div>
         <div class="filter-list">
-          <a class="filter-item" href="#">Specialised Finance <span class="filter-count">9</span></a>
-          <a class="filter-item" href="#">Finance Technology <span class="filter-count">7</span></a>
-          <a class="filter-item" href="#">Products &amp; Service Management <span class="filter-count">5</span></a>
-          <a class="filter-item" href="#">Innovation <span class="filter-count">3</span></a>
+          <a class="filter-item" href="#">Innovation Engine <span class="filter-count">—</span></a>
+          <a class="filter-item" href="#">Tech Infrastructure <span class="filter-count">—</span></a>
+          <a class="filter-item" href="#">Commercialisation Layer <span class="filter-count">—</span></a>
+          <a class="filter-item" href="#">Governance &amp; Trust <span class="filter-count">—</span></a>
         </div>
       </div>
     </aside>
@@ -620,10 +603,10 @@ footer{background:var(--off-black);border-top:1px solid var(--border-d);padding:
 
     <!-- Category tabs -->
     <div style="display:flex;border-bottom:2px solid var(--border);margin-bottom:24px;overflow-x:auto;scrollbar-width:none">
-      <button class="intel-tab active" onclick="switchIntelTab('finance',this)">Finance &amp; FP&amp;A</button>
-      <button class="intel-tab" onclick="switchIntelTab('energy',this)">US Energy</button>
-      <button class="intel-tab" onclick="switchIntelTab('ai',this)">AI &amp; Technology</button>
-      <button class="intel-tab" onclick="switchIntelTab('innovation',this)">Innovation</button>
+      <button class="intel-tab active" onclick="switchIntelTab('innovation',this)">Innovation Engine</button>
+      <button class="intel-tab" onclick="switchIntelTab('ai',this)">Tech Infrastructure</button>
+      <button class="intel-tab" onclick="switchIntelTab('commercial',this)">Commercialisation</button>
+      <button class="intel-tab" onclick="switchIntelTab('governance',this)">Governance &amp; Trust</button>
     </div>
 
     <!-- Strip -->
@@ -664,36 +647,33 @@ footer{background:var(--off-black);border-top:1px solid var(--border-d);padding:
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="logo">
-        <span class="logo-the" style="color:#555">the</span>
-        <span class="logo-main"><span class="logo-bracket">[</span><span class="logo-cfo">CFO</span><span class="logo-bracket">]</span><span class="logo-talent">&nbsp;talent</span></span>
+        <span style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--purple);letter-spacing:-.01em">Stratify Insights</span>
       </div>
-      <p>Financial engineering and operational intelligence for scale-ups and independent energy operators.</p>
+      <p>Enterprise intelligence at the intersection of AI, innovation, commercialisation, and governance — built for institutions shaping what's next.</p>
     </div>
     <div class="footer-col">
-      <h4>Resources</h4>
+      <h4>Pillars</h4>
       <ul>
-        <li><a href="#courses">Academy Courses</a></li>
-        <li><a href="#articles">Articles</a></li>
-        <li><a href="#">Templates</a></li>
-        <li><a href="#">Whitepapers</a></li>
+        <li><a href="courses.html">Innovation Engine</a></li>
+        <li><a href="courses.html">Tech Infrastructure</a></li>
+        <li><a href="courses.html">Commercialisation Layer</a></li>
+        <li><a href="courses.html">Governance &amp; Trust</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Services</h4>
+      <h4>Platforms</h4>
       <ul>
-        <li><a href="index.html#services">Performance &amp; FP&amp;A</a></li>
-        <li><a href="index.html#services">Operations &amp; Control</a></li>
-        <li><a href="index.html#digital">Digital as a Service</a></li>
-        <li><a href="us.html">US · Energy</a></li>
+        <li><a href="#">AI Native Platform</a></li>
+        <li><a href="https://thecfotalent.com" target="_blank" rel="noopener">the [CFO] talent</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="index.html#who">About Us</a></li>
-        <li><a href="index.html#process">Pricing</a></li>
-        <li><a href="#" onclick="qmOpen(event)">Get a Quote</a></li>
-        <li><a href="mailto:hello@thecfotalent.com">Contact</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="courses.html#enrol">Enrol</a></li>
+        <li><a href="blog-author.html">Submit Article</a></li>
+        <li><a href="mailto:hello@stratifyinsights.co.uk">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -808,7 +788,7 @@ document.querySelectorAll('.filter-item[data-filter]').forEach(item => {
 // Boot — render on page load
 document.addEventListener('DOMContentLoaded', () => {
   renderGrid('all');
-  switchIntelTab('finance', document.querySelector('.intel-tab.active'));
+  switchIntelTab('innovation', document.querySelector('.intel-tab.active'));
 });
 </script>
 
@@ -817,36 +797,36 @@ document.addEventListener('DOMContentLoaded', () => {
    INDUSTRY INTELLIGENCE — tabbed news feeds
 ══════════════════════════════════════ */
 const INTEL_FEEDS = {
-  finance: {
-    color: '#1A4A6E',
-    sources: [
-      { name: 'Accountancy Age', url: 'https://www.accountancyage.com/feed/' },
-      { name: 'CFO Magazine',    url: 'https://www.cfo.com/feed/' },
-      { name: 'ICAEW',          url: 'https://www.icaew.com/rss/news' },
-    ]
-  },
-  energy: {
-    color: '#5A7E18',
-    sources: [
-      { name: 'Rigzone',        url: 'https://www.rigzone.com/news/rss/rigzone_latest.aspx' },
-      { name: 'Hart Energy',    url: 'https://www.hartenergy.com/rss/news' },
-      { name: 'Oil & Gas 360',  url: 'https://www.oilandgas360.com/feed/' },
-    ]
-  },
-  ai: {
-    color: '#1B5E3A',
-    sources: [
-      { name: 'Finextra',       url: 'https://www.finextra.com/rss/headlines.aspx' },
-      { name: 'FinTech Futures', url: 'https://www.fintechfutures.com/feed/' },
-      { name: 'PYMNTS',         url: 'https://www.pymnts.com/feed/' },
-    ]
-  },
   innovation: {
-    color: '#5C3A1A',
+    color: '#7B3FA0',
     sources: [
       { name: 'McKinsey',       url: 'https://www.mckinsey.com/feeds/rss/innovation/rss.xml' },
       { name: 'MIT Sloan',      url: 'https://sloanreview.mit.edu/feed/' },
       { name: 'FastCompany',    url: 'https://www.fastcompany.com/innovation/rss' },
+    ]
+  },
+  ai: {
+    color: '#1A4A6E',
+    sources: [
+      { name: 'MIT Tech Review', url: 'https://www.technologyreview.com/feed/' },
+      { name: 'VentureBeat AI', url: 'https://venturebeat.com/category/ai/feed/' },
+      { name: 'The Verge Tech', url: 'https://www.theverge.com/rss/index.xml' },
+    ]
+  },
+  commercial: {
+    color: '#1B5E3A',
+    sources: [
+      { name: 'Harvard Biz Review', url: 'https://feeds.hbr.org/harvardbusiness' },
+      { name: 'TechCrunch',         url: 'https://techcrunch.com/feed/' },
+      { name: 'Wired Business',     url: 'https://www.wired.com/feed/category/business/latest/rss' },
+    ]
+  },
+  governance: {
+    color: '#2D3748',
+    sources: [
+      { name: 'OECD Policy',   url: 'https://www.oecd.org/newsroom/rss/news.xml' },
+      { name: 'WEF Insights',  url: 'https://www.weforum.org/agenda/feed' },
+      { name: 'AI Now Institute', url: 'https://ainowinstitute.org/feed' },
     ]
   }
 };

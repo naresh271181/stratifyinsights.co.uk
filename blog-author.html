@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/videos/logo_tumbnail.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Article Author — the [CFO] talent</title>
+<title>Article Author — Stratify Insights</title>
 <meta name="robots" content="noindex, nofollow">
 
 <!-- Fonts -->
@@ -202,9 +203,9 @@ body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--tex
 
 <!-- ── Top bar ── -->
 <div class="topbar">
-  <div class="topbar-logo">the <span>[CFO]</span> talent · Article Author</div>
+  <div class="topbar-logo">Stratify <span>Insights</span> · Article Author</div>
   <div class="topbar-actions">
-    <a href="resources.html" class="btn btn-ghost">← Intelligence Library</a>
+    <a href="resources.html" class="btn btn-ghost">← Insights</a>
     <button class="btn btn-white" onclick="generateOutput()">Generate &amp; Preview</button>
     <button class="btn btn-green" onclick="submitArticle()">✉ Submit Article</button>
   </div>
@@ -226,7 +227,7 @@ body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--tex
     <div class="field">
       <label>URL Slug (auto-generated)</label>
       <div class="slug-preview">blog-post.html?id=<span id="slug-display">your-article-slug</span></div>
-      <div class="field-hint">Used to link cards on Intelligence Library. Edit the slug field below if needed.</div>
+      <div class="field-hint">Used to link cards on Insights. Edit the slug field below if needed.</div>
     </div>
 
     <div class="field">
@@ -241,14 +242,34 @@ body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--tex
           <option value="">— Select type —</option>
           <option value="Article">Article</option>
           <option value="Whitepaper">Whitepaper</option>
+          <option value="Case Study">Case Study</option>
           <option value="Template">Template</option>
-          <option value="Academy Course">Academy Course</option>
-          <option value="Energy">Energy</option>
+          <option value="Research">Research</option>
+          <option value="Webinar">Webinar</option>
         </select>
       </div>
       <div class="field">
-        <label>Topic / Vertical *</label>
-        <input type="text" id="f-topic" placeholder="e.g. FP&A · Cash Flow" oninput="livePreview()">
+        <label>Pillar / Category *</label>
+        <select id="f-topic" onchange="livePreview()">
+          <option value="">— Select pillar —</option>
+          <optgroup label="Pillar 1: Innovation Engine">
+            <option value="Design Thinking">Design Thinking</option>
+            <option value="Product Management">Product Management</option>
+            <option value="Open Innovation">Open Innovation</option>
+          </optgroup>
+          <optgroup label="Pillar 2: Tech Infrastructure">
+            <option value="Agentic AI in Finance">Agentic AI in Finance</option>
+            <option value="Data Analytics">Data Analytics</option>
+            <option value="Blockchain &amp; DeFi">Blockchain &amp; DeFi</option>
+          </optgroup>
+          <optgroup label="Pillar 3: Commercialisation Layer">
+            <option value="Digital IP Strategy">Digital IP Strategy</option>
+            <option value="Strategic Financial Modelling">Strategic Financial Modelling</option>
+          </optgroup>
+          <optgroup label="Pillar 4: Governance &amp; Trust">
+            <option value="AI &amp; Enterprise Governance">AI &amp; Enterprise Governance</option>
+          </optgroup>
+        </select>
       </div>
     </div>
 
